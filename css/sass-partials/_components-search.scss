@@ -1,0 +1,131 @@
+/*==========
+COMPONENTS - SEARCH
+=========*/
+
+.card {
+    background-color: var(--card-bg-color);
+    border-radius: 5px;
+    box-shadow: var(--card-box-shadow);
+    overflow: hidden;
+    color: var(--card-text-color);
+
+    // Don't think this is working along with grid
+    max-width: 526px;
+
+    &:focus-within {
+        // outline: 1px solid gray;
+        box-shadow: 0 0 5px gray;
+    }
+
+    &__flag {
+        // Cover flag image
+        height: 160px;
+        box-shadow: var(--card-box-shadow);
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+    &__content {
+        padding: 1.9em 2em;
+    }
+    &__country {
+        word-wrap: break-word;
+        margin-bottom: 1em;
+
+        a {
+            text-decoration: none;
+            color: var(--card-text-color);
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &__list {
+        list-style: none;
+        li { margin-bottom: 5px; }
+    }
+    &__term {
+        font-weight: var(--font-semi-bold);
+    }
+}
+
+.custom-textbox {
+    position: relative;
+
+    &:before {
+        position: absolute;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900; // Needed to show icon
+        top: 50%;
+        left: 35px;
+        transform: translateY(-50%);
+
+        content: "\f002";
+        opacity: 0.6;
+        color: var(--textbox-text-color);
+    }
+
+    &__input {
+        width: 100%;
+        padding: 1.4em 1.3em 1.4em 5em;
+        border: 0;
+        border-radius: 5px;
+        box-shadow: var(--textbox-box-shadow);
+        background-color: var(--textbox-bg-color);
+        color: var(--textbox-text-color);
+
+        &::placeholder {
+            opacity: 0.6;
+            color: var(--textbox-text-color);
+        }
+    }
+}
+
+.custom-dropdown {
+    position: relative;
+
+    select {
+        appearance: none;
+        padding: 1.4em 4em 1.4em 1.4em;
+        border: 0;
+        border-radius: 5px;
+        box-shadow: var(--textbox-box-shadow);
+        background-color: var(--textbox-bg-color);
+        color: var(--textbox-text-color);
+    }
+    select::-ms-expand {
+        display: none; /* Hide the default arrow in Internet Explorer 10 and Internet Explorer 11 */
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: red;
+    }
+}
+
+
+
+/*==========
+DESKTOP
+=========*/
+
+@media only screen and (min-width: 700px) {
+
+    .card {
+        // transition: transform 200ms ease;
+        // &:hover {
+        //     transform: scale(1.1);
+        // }
+
+        &__country {
+            font-size: 1.1rem;
+            font-weight: var(--font-extra-bold);
+        }
+    }
+
+}

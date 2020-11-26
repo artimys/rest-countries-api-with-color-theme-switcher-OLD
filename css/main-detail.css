@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+:root {
+  --font-primary: 'Nunito Sans';
+  --font-light: 300;
+  --font-semi-bold: 600;
+  --font-extra-bold: 800;
+  --dmode-dark-blue: hsl(209, 23%, 22%);
+  --dmode-very-dark-blue: hsl(207, 26%, 17%);
+  --lmode-very-dark-blue: hsl(200, 15%, 8%);
+  --lmode-dark-gray: hsl(0, 0%, 52%);
+  --lmode-very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --page-max-width: 1280px;
+  --page-header-box-shadow: 0 0 5px hsla(0, 0%, 52%, 0.3);
+  --page-header-bg-color: var(--white);
+  --page-bg-color: var(--lmode-very-light-gray);
+  --page-body-color: var(--lmode-very-dark-blue);
+  --card-bg-color: var(--white);
+  --card-text-color: var(--lmode-very-dark-blue);
+  --card-box-shadow: 0 0 5px hsla(0, 0%, 52%, 0.3);
+  --textbox-bg-color: var(--white);
+  --textbox-text-color: var(--lmode-dark-gray);
+  --textbox-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme {
+  --page-header-bg-color: var(--dmode-dark-blue);
+  --page-bg-color: var(--dmode-very-dark-blue);
+  --page-body-color: var(--white);
+  --page-header-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --card-bg-color: var(--dmode-dark-blue);
+  --card-text-color: var(--white);
+  --card-box-shadow: 0 0 10px rgba(0, 0, 0, 0.18);
+  --textbox-bg-color: var(--dmode-dark-blue);
+  --textbox-text-color: var(--white);
+  --textbox-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/*==========
+DEFAULTS
+=========*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 14px;
+  background-color: var(--page-bg-color);
+  color: var(--page-body-color);
+  min-height: 100vh;
+}
+
+/*==========
+LAYOUT
+=========*/
+.container {
+  width: 85%;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+}
+
+.header {
+  max-height: 80px;
+  padding: 1.9em 0;
+  background-color: var(--page-header-bg-color);
+  -webkit-box-shadow: var(--page-header-box-shadow);
+          box-shadow: var(--page-header-box-shadow);
+}
+
+.header__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__title {
+  font-size: 0.45rem;
+  font-weight: var(--font-extra-bold);
+}
+
+.header__theme {
+  font-size: 0.85rem;
+  font-weight: var(--font-semi-bold);
+}
+
+/*==========
+DESKTOP
+=========*/
+@media only screen and (min-width: 700px) {
+  .container {
+    width: 95%;
+  }
+  .header__title {
+    font-size: 0.75rem;
+  }
+}
+
+/*==========
+COMPONENTS - HEADER
+=========*/
+.theme-switch {
+  position: relative;
+  background-color: transparent;
+  padding: 0.5em 0.3em 0.5em 2em;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  font-weight: var(--font-semi-bold);
+}
+
+.theme-switch[aria-pressed="true"] {
+  color: var(--white);
+}
+
+.theme-switch:before, .theme-switch:after {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  top: 50%;
+  left: 5px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.theme-switch[aria-pressed="false"]:before {
+  content: "\f186";
+}
+
+.theme-switch[aria-pressed="true"]:after {
+  content: "\f185";
+  color: yellow;
+}
+
+/*==========
+DESKTOP
+=========*/
+@media only screen and (min-width: 700px) {
+  .theme-switch {
+    font-size: 1rem;
+  }
+}
+
+/*==========
+LAYOUT
+=========*/
+/*==========
+DESKTOP
+=========*/
+/*# sourceMappingURL=main-detail.css.map */

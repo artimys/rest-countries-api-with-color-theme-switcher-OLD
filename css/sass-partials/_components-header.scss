@@ -1,0 +1,48 @@
+/*==========
+COMPONENTS - HEADER
+=========*/
+
+.theme-switch {
+    position: relative;
+    background-color: transparent;
+    padding: 0.5em 0.3em 0.5em 2em;
+    border: 0;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    // font-size: clamp(0.85rem, 1.5vw, 1rem); // Love it but no support on IE11
+    font-size: 0.85rem;
+    font-weight: var(--font-semi-bold);
+
+    &[aria-pressed="true"] {
+        color: var(--white);
+    }
+
+    &:before, &:after {
+        position: absolute;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900; // Required to show icon
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+    }
+    &[aria-pressed="false"]:before {
+        content: "\f186"; // moon
+    }
+    &[aria-pressed="true"]:after {
+        content: "\f185"; // sun
+        color: yellow;
+    }
+}
+
+
+/*==========
+DESKTOP
+=========*/
+
+@media only screen and (min-width: 700px) {
+
+    .theme-switch {
+        font-size: 1rem;
+    }
+
+}

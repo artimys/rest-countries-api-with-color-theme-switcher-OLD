@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root {
+    // Font library styles
+    --font-primary: 'Nunito Sans';
+    --font-light: 300;
+    --font-semi-bold: 600;
+    --font-extra-bold: 800;
+
+    // Color library
+    --dmode-dark-blue: hsl(209, 23%, 22%);      //(Dark Mode Elements)
+    --dmode-very-dark-blue: hsl(207, 26%, 17%); //(Dark Mode Background)
+    --lmode-very-dark-blue: hsl(200, 15%, 8%);  //(Light Mode Text)
+    --lmode-dark-gray: hsl(0, 0%, 52%);         //(Light Mode Input)
+    --lmode-very-light-gray: hsl(0, 0%, 98%);   //(Light Mode Background)
+    --white: hsl(0, 0%, 100%);                  //(Dark Mode Text & Light Mode Elements)
+
+    // Page defaults / colors
+    --page-max-width: 1280px;
+    --page-header-box-shadow: 0 0 5px hsla(0, 0%, 52%, 0.3);
+    --page-header-bg-color: var(--white);
+    --page-bg-color: var(--lmode-very-light-gray);
+    --page-body-color: var(--lmode-very-dark-blue);
+
+    // Card colors
+    --card-bg-color: var(--white);
+    --card-text-color: var(--lmode-very-dark-blue);
+    --card-box-shadow: 0 0 5px hsla(0, 0%, 52%, 0.3);
+
+    // Custom search text box
+    --textbox-bg-color: var(--white);
+    --textbox-text-color: var(--lmode-dark-gray);
+    --textbox-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme {
+    // Page colors
+    --page-header-bg-color: var(--dmode-dark-blue);
+    --page-bg-color: var(--dmode-very-dark-blue);
+    --page-body-color: var(--white);
+    --page-header-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    // Card colors
+    --card-bg-color: var(--dmode-dark-blue);
+    --card-text-color: var(--white);
+    --card-box-shadow: 0 0 10px rgba(0, 0, 0, 0.18);
+
+    // Custom search text box
+    --textbox-bg-color: var(--dmode-dark-blue);
+    --textbox-text-color: var(--white);
+    --textbox-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/*==========
+DEFAULTS
+=========*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary), sans-serif;
+    font-size: 14px;
+    background-color: var(--page-bg-color);
+    color: var(--page-body-color);
+    min-height: 100vh;
+}
+
+
+/*==========
+LAYOUT
+=========*/
+
+.container {
+    width: 85%;
+    max-width: var(--page-max-width);
+    margin:  0 auto;
+}
+
+.header {
+    max-height: 80px;
+    padding: 1.9em 0;
+    background-color: var(--page-header-bg-color);
+    box-shadow: var(--page-header-box-shadow);
+
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-size: 0.45rem;
+        font-weight: var(--font-extra-bold);
+    }
+    &__theme {
+        font-size: 0.85rem;
+        font-weight: var(--font-semi-bold);
+    }
+}
+
+
+/*==========
+DESKTOP
+=========*/
+
+@media only screen and (min-width: 700px) {
+
+    .container {
+        width: 95%;
+    }
+
+    .header {
+        &__title {
+            font-size: 0.75rem;
+        }
+    }
+
+}
