@@ -17,6 +17,9 @@
 
     // Page defaults
     --page-max-width: 1280px;
+    // Color transition for theme switch
+    --duration: 0.5s;
+    --timing: ease;
 
 
     // LIGHT MODE
@@ -57,7 +60,31 @@ body.dark {
     --textbox-bg-color: var(--dmode-dark-blue);
     --textbox-text-color: var(--white);
     --textbox-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+    // Re-colorization for svgs - dim the intensity of images
+    --image-filter: grayscale(40%);
+    --image-filter-hover: grayscale(0%);
+    img[src*=".svg"] {
+        filter: var(--image-filter);
+    }
+    .card {
+        img[src*=".svg"]:hover {
+            filter: var(--image-filter-hover);
+        }
+    }
 }
+
+
+
+
+@mixin theme-transition {
+    transition:
+            color var(--duration) var(--timing),
+            background-color var(--duration) var(--timing);
+}
+
+
 
 /*==========
 DEFAULTS
@@ -75,6 +102,8 @@ body {
     background-color: var(--page-bg-color);
     color: var(--page-body-color);
     min-height: 100vh;
+
+    @include theme-transition;
 }
 
 
@@ -93,6 +122,8 @@ LAYOUT
     padding: 1.9em 0;
     background-color: var(--page-header-bg-color);
     box-shadow: var(--page-header-box-shadow);
+
+    @include theme-transition;
 
     &__row {
         display: flex;

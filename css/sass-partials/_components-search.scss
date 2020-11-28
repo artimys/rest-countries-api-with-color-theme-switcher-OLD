@@ -9,6 +9,8 @@ COMPONENTS - SEARCH
     overflow: hidden;
     color: var(--card-text-color);
 
+    @include theme-transition;
+
     // Don't think this is working along with grid
     max-width: 526px;
 
@@ -76,6 +78,8 @@ COMPONENTS - SEARCH
         box-shadow: var(--textbox-box-shadow);
         background-color: var(--textbox-bg-color);
         color: var(--textbox-text-color);
+
+        @include theme-transition;
 
         &::placeholder {
             opacity: 0.6;

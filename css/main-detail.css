@@ -11,6 +11,8 @@
   --lmode-very-light-gray: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
   --page-max-width: 1280px;
+  --duration: 0.5s;
+  --timing: ease;
   --page-header-box-shadow: 0 0 5px hsla(0, 0%, 52%, 0.3);
   --page-header-bg-color: var(--white);
   --page-bg-color: var(--lmode-very-light-gray);
@@ -34,6 +36,18 @@ body.dark {
   --textbox-bg-color: var(--dmode-dark-blue);
   --textbox-text-color: var(--white);
   --textbox-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --image-filter: grayscale(40%);
+  --image-filter-hover: grayscale(0%);
+}
+
+body.dark img[src*=".svg"] {
+  -webkit-filter: var(--image-filter);
+          filter: var(--image-filter);
+}
+
+body.dark .card img[src*=".svg"]:hover {
+  -webkit-filter: var(--image-filter-hover);
+          filter: var(--image-filter-hover);
 }
 
 /*==========
@@ -52,6 +66,8 @@ body {
   background-color: var(--page-bg-color);
   color: var(--page-body-color);
   min-height: 100vh;
+  -webkit-transition: color var(--duration) var(--timing), background-color var(--duration) var(--timing);
+  transition: color var(--duration) var(--timing), background-color var(--duration) var(--timing);
 }
 
 /*==========
@@ -69,6 +85,8 @@ LAYOUT
   background-color: var(--page-header-bg-color);
   -webkit-box-shadow: var(--page-header-box-shadow);
           box-shadow: var(--page-header-box-shadow);
+  -webkit-transition: color var(--duration) var(--timing), background-color var(--duration) var(--timing);
+  transition: color var(--duration) var(--timing), background-color var(--duration) var(--timing);
 }
 
 .header__row {
