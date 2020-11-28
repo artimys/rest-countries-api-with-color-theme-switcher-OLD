@@ -15,8 +15,13 @@
     --lmode-very-light-gray: hsl(0, 0%, 98%);   //(Light Mode Background)
     --white: hsl(0, 0%, 100%);                  //(Dark Mode Text & Light Mode Elements)
 
-    // Page defaults / colors
+    // Page defaults
     --page-max-width: 1280px;
+
+
+    // LIGHT MODE
+    // -----------------------------------------------
+    // Page colors
     --page-header-box-shadow: 0 0 5px hsla(0, 0%, 52%, 0.3);
     --page-header-bg-color: var(--white);
     --page-bg-color: var(--lmode-very-light-gray);
@@ -33,7 +38,10 @@
     --textbox-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-body.dark-theme {
+body.dark {
+    // DARK MODE
+    // -----------------------------------------------
+
     // Page colors
     --page-header-bg-color: var(--dmode-dark-blue);
     --page-bg-color: var(--dmode-very-dark-blue);

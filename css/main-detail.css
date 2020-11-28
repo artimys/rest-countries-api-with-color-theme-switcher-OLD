@@ -23,7 +23,7 @@
   --textbox-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-body.dark-theme {
+body.dark {
   --page-header-bg-color: var(--dmode-dark-blue);
   --page-bg-color: var(--dmode-very-dark-blue);
   --page-body-color: var(--white);
