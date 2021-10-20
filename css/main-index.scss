@@ -8,11 +8,15 @@ LAYOUT
 =========*/
 
 .search {
-    margin: 3.7em auto;
+    margin: 2.1em auto;
 
     &__row {
         display: flex;
         flex-direction: column;
+    }
+
+    &__region {
+        margin-top: 3.2em;
     }
 }
 
@@ -37,6 +41,9 @@ DESKTOP
 @media only screen and (min-width: 700px) {
 
     .search {
+        margin-top: 3.7em;
+        margin-bottom: 3.7em;
+
         &__row {
             flex-direction: row;
         }
@@ -45,7 +52,7 @@ DESKTOP
         }
         &__region {
             flex: 2;
-            text-align: right;
+            margin-top: 0;
         }
     }
 

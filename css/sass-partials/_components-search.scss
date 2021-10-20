@@ -90,25 +90,57 @@ COMPONENTS - SEARCH
 
 .custom-dropdown {
     position: relative;
+    width: 200px;
+    cursor: pointer;
 
-    select {
-        appearance: none;
+    &__label, &__options {
+        width: 100%;
+        text-align: left;
+    }
+    &__label {
         padding: 1.4em 4em 1.4em 1.4em;
         border: 0;
         border-radius: 5px;
         box-shadow: var(--textbox-box-shadow);
         background-color: var(--textbox-bg-color);
         color: var(--textbox-text-color);
-    }
-    select::-ms-expand {
-        display: none; /* Hide the default arrow in Internet Explorer 10 and Internet Explorer 11 */
-    }
+        @include theme-transition;
 
-    &__arrow {
+        &:before {
+            position: absolute;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900; // Needed to show icon
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+
+            content: "\f078";
+            opacity: 0.6;
+            color: var(--textbox-text-color);
+        }
+    }
+    &__options {
+        z-index: 20;
         position: absolute;
-        top: 0;
-        right: 0;
-        background-color: red;
+        border-radius: 5px;
+        background-color: var(--textbox-bg-color);
+        box-shadow: var(--textbox-box-shadow);
+        color: var(--textbox-text-color);
+        @include theme-transition;
+
+        list-style-type: none;
+        overflow: hidden;
+        top: 57px;
+    }
+    &__option {
+        padding: 0.4em 1.4em;
+        &:first-child { padding-top: 0.8em; }
+        &:last-child { padding-bottom: 0.8em; }
+
+        &:hover {
+            background-color: #526c84;
+            cursor: pointer;
+        }
     }
 }
 
@@ -132,4 +164,7 @@ DESKTOP
         }
     }
 
+    .custom-dropdown {
+        float: right;
+    }
 }

@@ -285,12 +285,16 @@ COMPONENTS - SEARCH
 
 .custom-dropdown {
   position: relative;
+  width: 200px;
+  cursor: pointer;
 }
 
-.custom-dropdown select {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+.custom-dropdown__label, .custom-dropdown__options {
+  width: 100%;
+  text-align: left;
+}
+
+.custom-dropdown__label {
   padding: 1.4em 4em 1.4em 1.4em;
   border: 0;
   border-radius: 5px;
@@ -298,18 +302,53 @@ COMPONENTS - SEARCH
           box-shadow: var(--textbox-box-shadow);
   background-color: var(--textbox-bg-color);
   color: var(--textbox-text-color);
+  -webkit-transition: color var(--duration) var(--timing), background-color var(--duration) var(--timing);
+  transition: color var(--duration) var(--timing), background-color var(--duration) var(--timing);
 }
 
-.custom-dropdown select::-ms-expand {
-  display: none;
-  /* Hide the default arrow in Internet Explorer 10 and Internet Explorer 11 */
-}
-
-.custom-dropdown__arrow {
+.custom-dropdown__label:before {
   position: absolute;
-  top: 0;
-  right: 0;
-  background-color: red;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  top: 50%;
+  right: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  content: "\f078";
+  opacity: 0.6;
+  color: var(--textbox-text-color);
+}
+
+.custom-dropdown__options {
+  z-index: 20;
+  position: absolute;
+  border-radius: 5px;
+  background-color: var(--textbox-bg-color);
+  -webkit-box-shadow: var(--textbox-box-shadow);
+          box-shadow: var(--textbox-box-shadow);
+  color: var(--textbox-text-color);
+  -webkit-transition: color var(--duration) var(--timing), background-color var(--duration) var(--timing);
+  transition: color var(--duration) var(--timing), background-color var(--duration) var(--timing);
+  list-style-type: none;
+  overflow: hidden;
+  top: 57px;
+}
+
+.custom-dropdown__option {
+  padding: 0.4em 1.4em;
+}
+
+.custom-dropdown__option:first-child {
+  padding-top: 0.8em;
+}
+
+.custom-dropdown__option:last-child {
+  padding-bottom: 0.8em;
+}
+
+.custom-dropdown__option:hover {
+  background-color: #526c84;
+  cursor: pointer;
 }
 
 /*==========
@@ -320,13 +359,16 @@ DESKTOP
     font-size: 1.1rem;
     font-weight: var(--font-extra-bold);
   }
+  .custom-dropdown {
+    float: right;
+  }
 }
 
 /*==========
 LAYOUT
 =========*/
 .search {
-  margin: 3.7em auto;
+  margin: 2.1em auto;
 }
 
 .search__row {
@@ -337,6 +379,10 @@ LAYOUT
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.search__region {
+  margin-top: 3.2em;
 }
 
 .results__row {
@@ -358,6 +404,10 @@ LAYOUT
 DESKTOP
 =========*/
 @media only screen and (min-width: 700px) {
+  .search {
+    margin-top: 3.7em;
+    margin-bottom: 3.7em;
+  }
   .search__row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -373,7 +423,7 @@ DESKTOP
     -webkit-box-flex: 2;
         -ms-flex: 2;
             flex: 2;
-    text-align: right;
+    margin-top: 0;
   }
   .results__row {
     width: 100%;

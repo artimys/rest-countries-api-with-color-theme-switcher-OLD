@@ -58,7 +58,8 @@ async function callAPI(value, {searchField: queryField = 'all'} = {}) {
         }
 
         // Call API from restcountries.eu returning a specific list of field names
-        countriesData = await fetch("https://restcountries.eu/rest/v2/" + queryString + "?fields=name;flag;population;region;capital")
+        // countriesData = await fetch("https://restcountries.eu/rest/v2/" + queryString + "?fields=name;flag;population;region;capital")
+        countriesData = await fetch("https://restcountries.com/v2/" + queryString )
             .then(response => {
                 if (!response.ok) {
                     throw response.statusText;

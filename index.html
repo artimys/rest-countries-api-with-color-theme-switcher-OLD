@@ -18,7 +18,13 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body class="dark-dtheme">
+<body>
+
+  <div id="loader" style="display: none;">
+    Mother f**ken loading screen
+  </div>
+
+
 
   <header class="header">
 
@@ -55,8 +61,7 @@
 
             <div class="search__region">
 
-              <div class="custom-dropdown">
-                <select name="searchRegion" id="searchRegion">
+                <select name="searchRegion" id="searchRegion" style="display: nodne;">
                   <option value="africa">Africa</option>
                   <option value="americas">Americas</option>
                   <option value="asia">Asia</option>
@@ -64,22 +69,15 @@
                   <option value="oceania">Oceania</option>
                 </select>
 
-
-<!--
-                <ul name="regions" id="regions">
-                  <li value="africa">Africa</li>
-                  <li value="america">America</li>
-                  <li value="asia">Asia</li>
-                  <li value="europe">Europe</li>
-                  <li value="oceania">Oceania</li>
+              <div class="custom-dropdown">
+                <button class="custom-dropdown__label" aria=haspopup="true">Filter by Region</button>
+                <ul class="custom-dropdown__options" role="listbox" aria-expanded="false">
+                  <li class="custom-dropdown__option" role="option" tabindex="0" value="africa">Africa</li>
+                  <li class="custom-dropdown__option" role="option" tabindex="0" value="america">America</li>
+                  <li class="custom-dropdown__option" role="option" tabindex="0" value="asia">Asia</li>
+                  <li class="custom-dropdown__option" role="option" tabindex="0" value="europe">Europe</li>
+                  <li class="custom-dropdown__option" role="option" tabindex="0" value="oceania">Oceania</li>
                 </ul>
--->
-
-
-              </div>
-
-              <div class="custom-dropdown__arrow">
-                <i class="fas fa-chevron-down"></i>
               </div>
 
             </div>
@@ -97,9 +95,11 @@
               <img src="" alt="">
           </header>
 
-          <h2 class="card__country">Germany</h2>
-
           <div class="card__content">
+            <h2 class="card__country">
+                <a href="#" title="">Germany</a>
+            </h2>
+
             <ul class="card__list">
               <li>
                 <strong class="card__term">Population</strong>
@@ -120,6 +120,29 @@
 
   </main>
 
+
+
+
+    <script>
+
+/*
+window.addEventListener('load', (event) => {
+    console.log('load');
+});
+
+
+        document.onreadystatechange = function() {
+                console.log("onreadstatechange: ", document.readyState);
+            if (document.readyState !== "complete") {
+                document.querySelector("body").style.visibility = "hidden";
+                document.querySelector("#loader").style.visibility = "visible";
+            } else {
+                document.querySelector("#loader").style.display = "none";
+                document.querySelector("body").style.visibility = "visible";
+            }
+        };
+        */
+    </script>
 
 
   <!-- <footer class="attribution">
